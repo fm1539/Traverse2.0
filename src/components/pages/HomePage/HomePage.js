@@ -132,13 +132,13 @@ function HomePage(){
             <div id="intro" className="features-container">
                 <h1>Features</h1>
                 <div className="switchers-div">
-                    <button id="messaging" onClick={switchHandler}></button>
+                    <button id="messaging" style={switchStr==='messaging'? {backgroundColor: 'tomato'} :null} onClick={switchHandler}></button>
                     
                     <div className="vl"></div>
-                    <button id="event" onClick={switchHandler}></button>
+                    <button id="event" style={switchStr==='event'? {backgroundColor: 'tomato'} :null} onClick={switchHandler}></button>
                     
                     <div className="vl"></div>
-                    <button id="sharing" onClick={switchHandler}></button>
+                    <button id="sharing" style={switchStr==='sharing'? {backgroundColor: 'tomato'} :null} onClick={switchHandler}></button>
                     <div className="switcher-text">
                         <p>Messaging</p>
                         <p>Event Planning</p>

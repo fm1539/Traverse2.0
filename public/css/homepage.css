@@ -134,6 +134,10 @@
     background-color: tomato;
 }
 
+.switchers-div-active{
+    background-color: tomato;
+}
+
 .switchers-div button:focus{
     outline: none;
 }
