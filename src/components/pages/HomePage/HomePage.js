@@ -4,6 +4,17 @@ function HomePage(){
 
     const [login, setLogin] = useState(true)
 
+    const [switchStr, setSwitch] = useState('messaging')
+
+    const switchHandler = (event) => {
+        setSwitch(prev => {
+            if (prev !== event.target.id){
+                return event.target.id
+            }
+        })
+        
+    }
+
     const loginHandler = (value) => {
         setLogin(value)
     }
@@ -12,12 +23,27 @@ function HomePage(){
     let rBtn = "lg"
     let height = "70vh"
 
+    let content = <div>
+        <h1>Messaging</h1>
+    </div>
+
     if (login){
         lBtn = "gl"
     }
     else{
         rBtn = "gl"
         height = "70vh"
+    }
+
+    if (switchStr === "event"){
+        content = <div>
+            <h1>Event Planning</h1>
+        </div>
+    }
+    else if (switchStr === "sharing"){
+        content = <div>
+            <h1>Sharing</h1>
+        </div>
     }
 
     return (
@@ -105,6 +131,25 @@ function HomePage(){
 
             <div id="intro" className="features-container">
                 <h1>Features</h1>
+                <div className="switchers-div">
+                    <button id="messaging" onClick={switchHandler}></button>
+                    
+                    <div className="vl"></div>
+                    <button id="event" onClick={switchHandler}></button>
+                    
+                    <div className="vl"></div>
+                    <button id="sharing" onClick={switchHandler}></button>
+                    <div className="switcher-text">
+                        <p>Messaging</p>
+                        <p>Event Planning</p>
+                        <p>Sharing</p>
+                    </div>
+                    
+                </div>
+
+                <div className="features-content">
+                    {content}
+                </div>
                 
             </div>
 
@@ -112,7 +157,6 @@ function HomePage(){
                 <div className="isfar" >
                     <img style={{height:'50px', borderRadius:'50%'}} src="img/isfarpic.jpg"/>
                     <h1>Isfar Oshir</h1>
-                    <h2>(646)705-9950</h2>
                     <h2>iao233@nyu.edu</h2>
                     <a href="https://www.linkedin.com/in/isfar-oshir-043403190/" target="_blank" style={{paddingRight: '10px'}}><i className="fa fa-linkedin-square socialIcon"></i></a>
                     <a href="http://www.isfaroshir.com/" target="_blank" style={{paddingRight: '10px'}}><img src="img/isfarcom.png" style={{height:'15px'}} /></a>
@@ -126,13 +170,12 @@ function HomePage(){
                     <div className="circle"></div>
                     <hr className="rightHR"/>
                     
-                    <p style={{fontSize:"11px"}}>© 2020 RateMyTutor. All Rights Reserved</p>
+                    <p style={{fontSize:"11px"}}>© 2021 Traverse. All Rights Reserved</p>
                 </div>
 
                 <div className="farhan">
                     <img style={{height:'50px', borderRadius:'50%'}} src="img/farhanpic.jpeg"/>
                     <h1>Farhan Mashud</h1>
-                    <h2>Phone number</h2>
                     <h2>fm1539@nyu.edu</h2>
                     <a href="https://www.linkedin.com/in/farhan-m8/" target="_blank" style={{paddingRight: '10px'}}><i className="fa fa-linkedin-square socialIcon"></i></a>
                     {/* <a href="http://www.isfaroshir.com/" target="_blank" style={{paddingRight: '10px'}}><img src="img/isfarcom.png" style={{height:'15px'}} /></a> */}
