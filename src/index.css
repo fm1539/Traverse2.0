@@ -14,13 +14,30 @@ html, body, #app, #app>div {
 }
 #root {
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .App{
   height: 100%;
-
+  
+  scroll-behavior: smooth;
 }
+
+.mobile{
+  display: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (max-width: 454px)
+{
+  .App{
+    display: none
+  }
+  .mobile{
+    display: block;
+  }
 }
