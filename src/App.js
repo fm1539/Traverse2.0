@@ -5,6 +5,7 @@ import {Route,
 } from 'react-router-dom'
 
 import HomePage from './components/pages/HomePage/HomePage'
+import Friends from './components/pages/Friends/Friends'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <HomePage />
         </Route>
         <Route path="/friends" exact>
-          
+          <Friends />
         </Route>
         </Switch>
       </Router>
