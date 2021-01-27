@@ -40,18 +40,153 @@
     justify-content: center;
 }
 
+.reviews-container{
+    height:25vh;
+}
+.features-container{
+    margin-top: 200px;
+    height: 90vh;
+}
+
+@media screen and (max-width: 1137px){
+
+    .personH{
+        height: 30% !important;
+    }
+    .reviews-container{
+        margin-top: 40vh;
+    }
+
+    .reviews{
+        list-style-type: none;
+        display: block;
+        
+        top: 80%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 0;
+        justify-content: center;
+    }
+
+    .reviews li div{
+        padding: 20px 50px 100px 50px;
+        width: 20vh;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        border: solid black;
+        border-width: 0;
+        border-radius: 3px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .reviews li {
+        padding-bottom: 5%;
+        position: relative;
+        text-align: center;
+        height: 5%;
+    }
+
+    .features-container{
+        margin-top: 20vh;
+        height: '200vh'
+    }
+
+
+
+    .scroll{
+        display: none;
+    }
+    
+}
+
+.personH{
+    height: 60%;
+    border: none;
+    position: relative;
+    top:-50px;
+    left: 10%;
+}
+
+.switchers-div{
+    display: inline-block;
+    width: 7%;
+    height: 70px;
+    float: left;
+    margin-top: 80px;
+    margin-left: 20%;
+}
+
+.switchers-div button{
+    display: block;
+    height: 33%;
+    width: 20%;
+    border-radius: 50%;
+    border-width: 1px;
+    background-color: turquoise;
+    border-style: dashed;
+    border-color: white;
+}
+
+.switchers-div button:hover{
+    cursor: pointer;
+    background-color: tomato;
+}
+
+.switchers-div-active{
+    background-color: tomato;
+}
+
+.switchers-div button:focus{
+    outline: none;
+}
+
+.vl {
+    border-left: 3px solid #44318D;
+    height: 100px;
+    margin-left: 7.5%;
+}
+
+.switcher-text{
+    position: relative;
+    left: 25%;
+    bottom: 285px;
+}
+.switcher-text p{
+    padding-bottom: 89px;
+    text-align: left;
+}
+
+.switchers-div p{
+    /* display: inline-block;
+    position: absolute;
+    bottom: 1px; */
+}
+
+.login-register input{
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 2px;
+}
+
+.login-register input:focus{
+    outline: none;
+}
+
 .reviews li {
-    padding-left: 50px;
-    padding-right: 50px;   
+    padding-left: 5%;
+    padding-right: 5%;   
+    text-align: center;
 }
 
 .reviews li div{
     padding: 20px 50px 100px 50px;
-    width: 200px;
+    width: 20vh;
     background-color: white;
     border: solid black;
     border-width: 0;
-    border-radius: 3px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -84,18 +219,25 @@
   }
 
   .top-section{
-      background-color: cadetblue;
+      /* background-color: #116466; */
+      background: linear-gradient(217deg, #8860D0, #84CEEB 70.71%),
+            linear-gradient(127deg, #5AB9EA, #C1C8E4 70.71%),
+            linear-gradient(336deg, #C1C8E4, #8860D0 70.71%);
       height: 65vh;
   }
 
   footer{
-      
-      width: 100%;
+      margin-top: 20vh;    
+      background-color: cadetblue;
+      /* background: linear-gradient(217deg, #8860D0, #84CEEB 70.71%),
+            linear-gradient(127deg, #5AB9EA, #C1C8E4 70.71%),
+            linear-gradient(336deg, #C1C8E4, #8860D0 70.71%); */
+      height: 170px;
   }
 
   .login-register{
 
-    padding: 20px 50px 100px 50px;
+    padding: 20px 50px 20px 50px;
     width: 200px;
     background-color: white;
     border: solid black;
@@ -106,15 +248,56 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.leftHR, .rightHR{
+    position: absolute;
+    width: 15%;
+    
+}
+
+.center-design{
+    position: absolute;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.circle{
+    height: 20px;
+    width: 20px;
+    
+    border-color: black;
+    border-radius: 50%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    animation: rotate 1s infinite;
+}
+
+@keyframes rotate{
+    0% {border-style: solid;}
+    25% {border-style: dashed}
+    50% {border-style: dotted}
+    75% {border-style: dashed}
+    100% {border-style: solid}
+}
+
+.leftHR{
+    left: 30%;
+}
+
+.rightHR{
+    right: 30%;
+    bottom: 43px;
+}
+
 .scroll{
     position: relative;
     animation: upDown 2s infinite;
 }
 
 @keyframes upDown {
-    0% {top: 0}
-    50% {top: 20px}
-    100% {top: 0}
+    0% {top: -20px}
+    50% {top: 0}
+    100% {top: -20px}
 }
 
 .lg{
@@ -148,6 +331,21 @@
     outline: none;
 }
 
+.isfar, .farhan{
+    font-size: 7px;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+}
+
+.isfar h1, .farhan h1{
+    font-weight:300;
+}
+
+.isfar h2, .farhan h2{
+    font-weight:200;
+}
+
 .isfar{
     float: left;
     margin-left: 10px;
@@ -159,7 +357,7 @@
 }
 
 .socialIcon{
-    font-size: 20px !important; 
-    color: rgb(40, 103, 178); 
+    font-size: 20px !important;
+    color: rgb(40, 103, 178);
     
 }
