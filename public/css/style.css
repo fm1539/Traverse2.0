@@ -21,6 +21,18 @@
     width: 0;      
   }
 
+  .container {
+    padding: 20px 50px 20px 50px;
+    width: 200px;
+    background-color: white;
+    border: solid black;
+    border-width: 0;
+    border-radius: 3px;
+    margin-right: 20vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+  }
+
   .tab-container {
     padding: 20px 50px 20px 50px;
     width: 200px;
@@ -31,11 +43,12 @@
     float: left;
     margin-right: 20vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
   }
 
   .tab {
       border-bottom-style: solid;
-      border-bottom-width: 200%;
+      width: auto;
   }
 /* 
   .plat-nav-item:hover:after { 
