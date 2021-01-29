@@ -1,3 +1,5 @@
+
+
 .plat-nav-item{
     display: inline-block;
     color: #000;
@@ -37,19 +39,35 @@
     padding: 20px 50px 20px 50px;
     width: 200px;
     background-color: white;
-    border: solid black;
-    border-width: 0;
-    border-radius: 3px;
+    border: none;
     float: left;
     margin-right: 20vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
+    background-color: inherit;
   }
 
-  .tab {
-      border-bottom-style: solid;
-      width: auto;
+  .friends-btn {
+      width: 100%;
+      display: inline-block;
+      float: left;
+      background-color: transparent;
+      border: none;
+      transition: 0.3s;
   }
+
+  .friends-btn:hover {
+      cursor: pointer;
+      background-color: slategrey;
+  }
+
+  .friends-btn:focus {
+      outline: none;
+  }
+
+.active {
+    border-right: solid 1px;
+}
 /* 
   .plat-nav-item:hover:after { 
     width: 100%; 
