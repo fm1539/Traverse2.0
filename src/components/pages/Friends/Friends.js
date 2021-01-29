@@ -16,16 +16,21 @@ function Friends() {
     </div>
 
     let findDiv = <div className="container">
-        <h2>Oshir</h2>
+        <h1> Mashud </h1>
+        <button>Add</button>
         <hr></hr>
         <h2>Mashud</h2>
+    </div>
+
+    let requestDiv = <div className="container">
+        
     </div>
 
     let friendStatus = "friends-btn"
     let findStatus = "friends-btn"
     let reqStatus = "friends-btn"
 
-    if (friendState==="friends") {
+    if (friendState === "friends") {
         friendStatus = "friends-btn active"
         findStatus = "friends-btn"
         reqStatus = "friends-btn"
@@ -46,15 +51,10 @@ function Friends() {
             <PlatNavbar />
             <h3>Friends Hub</h3>
             <div className="tab-container">
-                <div className="tab">
-                    <button className={friendStatus} onClick={() => friendHandler('friends')}><h1 className="h1">Friends</h1></button>
-                </div>
-                <div className="tab">
-                    <button className={findStatus} onClick={() => friendHandler('find')}><h1 className="h1">Find Friends</h1></button>
-                </div>
-                <div className="tab">
-                    <button className={reqStatus} onClick={() => friendHandler('requests')}><h1 className="h1">Requests</h1></button>
-                </div>
+                <button className={friendStatus} onClick={() => friendHandler('friends')}><h1 className="h1tab">Friends</h1></button>               
+                <button className={findStatus} onClick={() => friendHandler('find')}><h1 className="h1tab">Find Friends</h1></button>            
+                <button className={reqStatus} onClick={() => friendHandler('requests')}><h1 className="h1tab">Requests</h1></button>
+                
             </div>
             {
                 friendState == 'friends' ? friendsDiv : (friendState == 'find' ? findDiv : <div>
