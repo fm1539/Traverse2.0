@@ -11,10 +11,10 @@ function SearchBar(props) {
         <div>
         <input
             className="form-control"
-            style={{width: '60%', marginLeft:'auto', marginRight:'auto'}}
             type="search"
             placeholder={props.placeholder}
             onChange={searchValHandler}
+            value={props.searchVal}
         ></input>
         </div>
     )

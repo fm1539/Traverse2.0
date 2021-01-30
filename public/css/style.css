@@ -11,10 +11,12 @@
   }
 
   .add-btn {
-      margin: auto;
+      height: 25px;
       background-color: transparent;
-      float: right;
+      /* float: right; */
       transition: 0.3s;
+      border-radius: 5px;
+      border-style: solid;
   }
 
   .add-btn:focus {
@@ -41,23 +43,32 @@
 
   .container {
     padding: 10px 0 10px 0;
-    width: 200px;
+    width: 400px;
+    overflow-y: scroll;
     background-color: white;
+    position: relative;
+    height: 50vh;
     border: solid black;
     border-width: 0;
     border-radius: 3px;
-    margin-right: 20vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .hub-container{
+    display: flex;
+    width: 40%;
     margin: auto;
   }
 
   .tab-container {
     padding: 20px 50px 20px 50px;
-    width: 200px;
+    width: 400px;
     background-color: white;
     border: none;
-    float: left;
-    margin-right: 20vh;
+    height: 15vh;
+    /* float: left; */
+    
+    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
     background-color: inherit;
@@ -66,22 +77,34 @@
 
   .h1tab {
       width: 100%;
+      font-size: 1.75vh;
+      
+      /* padding-left: 2% ;
+      padding-right: 2%; */
   }
 
-  .h2add {
-      margin: 0;
-      font-size: medium;
+  .h2find{
+    text-align: left;
+    padding-left: 10px;
   }
 
-  .h1find {
-      display: inline-block;
-      font-size: medium;
-      margin-top: 0;
-  }
+.form-control{
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.form-control:focus{
+  outline: none;
+}
+
 
   .friends-btn {
       width: 100%;
       display: block;
+      height: 33.333%;
       padding: 0;
       float: left;
       background-color: transparent;

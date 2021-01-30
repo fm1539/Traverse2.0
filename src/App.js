@@ -7,6 +7,7 @@ import {Route,
 
 import HomePage from './components/pages/HomePage/HomePage'
 import Friends from './components/pages/Friends/Friends'
+import Messages from './components/pages/Messages/Messages'
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <Switch>
         <Route path="/" exact>
           <HomePage />
+        </Route>
+        <Route path="/messages" exact>
+          <Messages />
         </Route>
         <Route path="/friends" exact>
           <Friends />
