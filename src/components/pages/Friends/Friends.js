@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import PlatNavbar from '../../Navbar'
+import SearchBar from '../../SearchBar'
 
 function Friends() {
 
@@ -16,14 +17,20 @@ function Friends() {
     </div>
 
     let findDiv = <div className="container">
-        <h1> Mashud </h1>
-        <button>Add</button>
+        <SearchBar />
+        <h2 className="h1find"> Mashud </h2>
+        <button className="add-btn"><h2 className="h2add">Add</h2></button>
         <hr></hr>
-        <h2>Mashud</h2>
+        <h2 className="h1find">Mashud</h2>
+        <button className="add-btn"><h2 className="h2add">Add</h2></button>
     </div>
 
     let requestDiv = <div className="container">
-        
+        <h1 className="h1find"> Isfar </h1>
+        <button className="add-btn"><h2 className="h2add">Accept</h2></button>
+        <hr></hr>
+        <h2 className="h1find">Oshir</h2>
+        <button className="add-btn"><h2 className="h2add">Accept</h2></button>
     </div>
 
     let friendStatus = "friends-btn"
@@ -57,8 +64,7 @@ function Friends() {
                 
             </div>
             {
-                friendState == 'friends' ? friendsDiv : (friendState == 'find' ? findDiv : <div>
-                </div>)
+                friendState == 'friends' ? friendsDiv : (friendState == 'find' ? findDiv : requestDiv)
             }
             
         </div>

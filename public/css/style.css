@@ -10,6 +10,22 @@
     position: relative;
   }
 
+  .add-btn {
+      margin: auto;
+      background-color: transparent;
+      float: right;
+      transition: 0.3s;
+  }
+
+  .add-btn:focus {
+      outline: none;
+  }
+
+  .add-btn:hover {
+      cursor: pointer;
+      background-color: slategrey;
+  }
+
   .plat-nav-item:after {
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -24,7 +40,7 @@
   }
 
   .container {
-    padding: 20px 50px 20px 50px;
+    padding: 10px 0 10px 0;
     width: 200px;
     background-color: white;
     border: solid black;
@@ -50,6 +66,17 @@
 
   .h1tab {
       width: 100%;
+  }
+
+  .h2add {
+      margin: 0;
+      font-size: medium;
+  }
+
+  .h1find {
+      display: inline-block;
+      font-size: medium;
+      margin-top: 0;
   }
 
   .friends-btn {
