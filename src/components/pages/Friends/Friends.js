@@ -6,9 +6,16 @@ function Friends() {
 
     let [friendState, setFriend] = useState('friends')
 
+    let [searchVal, setSearchVal] = useState('')
+
     let friendHandler = (value) => {
         setFriend(value)
     }
+
+    le
+
+    let friends = ["Farhan", "Isfar", "Moe", "Tazwar"]
+
 
     let friendsDiv = <div className="container">
         <h2>Isfar</h2>
@@ -17,7 +24,11 @@ function Friends() {
     </div>
 
     let findDiv = <div className="container">
-        <SearchBar />
+        <SearchBar 
+            placeholder="Search for friend"
+            arr={friends}
+            setSearchVal={setSearchVal}
+        />
         <h2 className="h1find"> Mashud </h2>
         <button className="add-btn"><h2 className="h2add">Add</h2></button>
         <hr></hr>
@@ -36,6 +47,8 @@ function Friends() {
     let friendStatus = "friends-btn"
     let findStatus = "friends-btn"
     let reqStatus = "friends-btn"
+
+    
 
     if (friendState === "friends") {
         friendStatus = "friends-btn active"
