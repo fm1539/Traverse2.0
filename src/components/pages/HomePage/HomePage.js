@@ -1,10 +1,58 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 
 function HomePage(){
 
     const [login, setLogin] = useState(true)
 
     const [switchStr, setSwitch] = useState('messaging')
+
+    const [userObj, setUserObj] = useState({})
+
+    const [registerEvent, setRegisterEvent] = useState({
+        username: "",
+        fName: "",
+        lName: "",
+        password: "",
+        repPass: ""
+    })
+
+    const [loginEvent, setLoginEvent] = useState({
+        email: "",
+        password: ""
+    })
+
+    const loginButtonHandler = () => {
+        console.log(loginEvent)
+        axios.post('http://localhost:8000/loginRegister/login', loginEvent).then( response => {
+            console.log(response.data);
+            if (response.data.status === "logged"){
+                console.log(response.data.userObj);
+                setUserObj(response.data.userObj)
+                window.location = '/messages'
+            }
+            else{
+                alert('Username or password is incorrect. Please try again')
+            }
+        }
+
+        )
+        // window.location = '/'
+    }
+
+    const loginChangeHandler = (event) => {
+        setLoginEvent({
+            ...loginEvent, 
+            [event.target.name]: event.target.value
+        })
+    }
+    
+    const registerChangeHandler = (event) => {
+        setRegisterEvent({
+            ...registerEvent,
+            [event.target.name]: event.target.value
+        })
+    }
 
     const switchHandler = (event) => {
         setSwitch(prev => {
@@ -14,6 +62,23 @@ function HomePage(){
         })
         
     }
+
+
+    const registerButtonHandler = () => {
+        console.log(registerEvent)
+        axios.post('http://localhost:8000/loginRegister/register', registerEvent).then( response => {
+            if (response.data.status === "registered"){
+                window.location = '/'
+            }
+            else{
+                alert('Username or Email already exists')
+            }
+        }
+
+        )
+        // window.location = '/'
+    }
+
 
     const loginHandler = (value) => {
         setLogin(value)
@@ -67,39 +132,46 @@ function HomePage(){
                     <br/><br/>
                     {login ? 
                     <div>
-                        
-                        <label>Email</label>
-                        <br/>
-                        <input name="email" required/>
-                        <br/>
-                        <label>Password</label>
-                        <input name="password" required/>
-                        <br/><br/>
-                        <button className="lg">Log In</button>
+                        <form>
+                            <label>Email</label>
+                            <br/>
+                            <input name="email" onChange={loginChangeHandler} type="email" required/>
+                            <br/>
+                            <label>Password</label>
+                            <input name="password" onChange={loginChangeHandler} type="password" required/>
+                            <br/><br/>
+                            <button type="button" onClick={loginButtonHandler} className="lg">Log In</button>
+                        </form>
                     </div>
                     : 
                     <div>
-                        <label>First Name</label>
-                        <br/>
-                        <input name="fName" required/>
-                        <br/>
-                        <label>Last Name</label>
-                        <br/>
-                        <input name="lName" required/>
-                        <br/>
-                        <label>Email</label>
-                        <br/>
-                        <input name="email" required/>
-                        <br/>
-                        <label>Password</label>
-                        <br/>
-                        <input name="password" required/>
-                        <br/>
-                        <label>Repeat Password</label>
-                        <br/>
-                        <input name="repPass" required/>
-                        <br /><br />
-                        <button className="lg">Register</button>
+                        <form>
+                            <label>Username</label>
+                            <br/>
+                            <input name="username" onChange={registerChangeHandler} required/>
+                            <br/>
+                            <label>First Name</label>
+                            <br/>
+                            <input name="fName" onChange={registerChangeHandler} required/>
+                            <br/>
+                            <label>Last Name</label>
+                            <br/>
+                            <input name="lName" onChange={registerChangeHandler} required/>
+                            <br/>
+                            <label>Email</label>
+                            <br/>
+                            <input name="email" onChange={registerChangeHandler} required/>
+                            <br/>
+                            <label>Password</label>
+                            <br/>
+                            <input name="password" onChange={registerChangeHandler} required/>
+                            <br/>
+                            <label>Repeat Password</label>
+                            <br/>
+                            <input name="repPass" onChange={registerChangeHandler} required/>
+                            <br /><br />
+                            <button type="button" className="lg" onClick={registerButtonHandler}>Register</button>
+                        </form>
                     </div>
                     }
 
