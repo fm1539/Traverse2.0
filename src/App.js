@@ -3,12 +3,14 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import {Route, 
         Switch,
-        Redirect
+        Redirect,
+        useParams
 } from 'react-router-dom'
 
 import HomePage from './components/pages/HomePage/HomePage'
 import Friends from './components/pages/Friends/Friends'
 import Messages from './components/pages/Messages/Messages'
+import Profile from './components/pages/Profile/Profile'
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
         <Route path="/friends" exact>
           { 
               JSON.parse(localStorage.getItem('userObj')) ? <Friends />
+               : <Redirect to="/" />
+          }
+        </Route>
+        <Route path="/profile/:userId" exact>
+          { 
+              JSON.parse(localStorage.getItem('userObj')) ? <Profile />
                : <Redirect to="/" />
           }
         </Route>
