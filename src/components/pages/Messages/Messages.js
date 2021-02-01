@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import socketIOClient from 'socket.io-client'
+import PlatNavBar from '../../Navbar'
 
 function Messages(){
 
@@ -8,7 +9,7 @@ function Messages(){
     useEffect(() => {
         const socket = socketIOClient("http://localhost:8000", { 
             transport: ['websocket', 'polling', 'flashsocket'],
-            withCredentials: true 
+            
         })
         socket.on("FromAPI", data => {
             console.log(data);
@@ -18,6 +19,7 @@ function Messages(){
 
     return (
         <div>
+            <PlatNavBar />
             <h1>Messages</h1>
             <p>Here: {response}</p>
         </div>

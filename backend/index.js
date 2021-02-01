@@ -26,6 +26,7 @@ connectDB();
 const port = 4001;
 const socketRoutes = require("./routes/socket");
 const lRroutes = require("./routes/loginRegister")
+const userRoutes = require("./routes/users")
 
 const app = express();
 
@@ -45,16 +46,17 @@ app.use((req, res, next) => {
 
 app.use('/socket', socketRoutes);
 app.use('/loginRegister', lRroutes)
+app.use('/users', userRoutes)
 
 const server = http.createServer(app);
 
 const io = socketIo(server, {
     cors: {
-        origin: 'http://localhost:8000/',
+        origin: '*',
         methods: ['GET', 'POST'],
-        credentials: true
+        
     }
-}); // < Interesting!
+}); 
 
 let interval;
 

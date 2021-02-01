@@ -3,6 +3,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import {Route, 
         Switch,
+        Redirect
 } from 'react-router-dom'
 
 import HomePage from './components/pages/HomePage/HomePage'
@@ -17,15 +18,24 @@ function App() {
     </div>
     <div className="App">
       <Router>
-        <Switch>
-        <Route path="/" exact>
+          <Switch>
+          <Route path="/" exact>
+          {JSON.parse(localStorage.getItem('userObj')) ?
+          <Redirect to="/messages" /> :
           <HomePage />
+          } 
         </Route>
         <Route path="/messages" exact>
-          <Messages />
+          {
+            JSON.parse(localStorage.getItem('userObj')) ? <Messages />
+             : <Redirect to="/" />
+          }
         </Route>
         <Route path="/friends" exact>
-          <Friends />
+          { 
+              JSON.parse(localStorage.getItem('userObj')) ? <Friends />
+               : <Redirect to="/" />
+          }
         </Route>
         </Switch>
       </Router>

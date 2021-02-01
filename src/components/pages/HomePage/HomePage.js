@@ -28,7 +28,7 @@ function HomePage(){
             console.log(response.data);
             if (response.data.status === "logged"){
                 console.log(response.data.userObj);
-                setUserObj(response.data.userObj)
+                localStorage.setItem('userObj', JSON.stringify(response.data.userObj))
                 window.location = '/messages'
             }
             else{
